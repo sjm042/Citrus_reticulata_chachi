@@ -1,0 +1,129 @@
+Pathway	diff.gene	All-gene 	Pvalue	Qvalue
+Anthocyanin biosynthesis	9	21	5.03E-06	0.00064383
+Circadian rhythm - plant	24	133	1.41E-05	0.000899976
+Isoflavonoid biosynthesis	14	72	0.000378574	0.014582224
+Ether lipid metabolism	13	65	0.000455695	0.014582224
+MAPK signaling pathway - plant	74	777	0.003533944	0.090468966
+Flavonoid biosynthesis	24	209	0.01060711	0.226285013
+Carotenoid biosynthesis	13	97	0.01661087	0.303741623
+Protein processing in endoplasmic reticulum	59	655	0.02433914	0.371172992
+Biosynthesis of secondary metabolites	222	2839	0.02832551	0.371172992
+Linoleic acid metabolism	10	73	0.02899789	0.371172992
+"Stilbenoid, diarylheptanoid and gingerol biosynthesis"	16	150	0.0574147	0.668098327
+Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	7	53	0.07272134	0.775694293
+Phenylpropanoid biosynthesis	66	805	0.09025916	0.888705575
+Fatty acid elongation	6	46	0.09724818	0.889126217
+alpha-Linolenic acid metabolism	9	83	0.1214864	0.90180928
+Cholesterol metabolism	3	18	0.125317	0.90180928
+Vitamin B6 metabolism	3	18	0.125317	0.90180928
+Flavone and flavonol biosynthesis	4	29	0.138801	0.90180928
+Terpenoid backbone biosynthesis	12	122	0.1409077	0.90180928
+"Glycine, serine and threonine metabolism"	12	122	0.1409077	0.90180928
+Thiamine metabolism	4	30	0.1518947	0.925834362
+Plant hormone signal transduction	47	591	0.1847446	0.9999869
+"Cutin, suberine and wax biosynthesis"	7	69	0.2018504	0.9999869
+Ubiquitin mediated proteolysis	29	357	0.215382	0.9999869
+Phenylalanine metabolism	14	160	0.2223649	0.9999869
+Ubiquinone and other terpenoid-quinone biosynthesis	15	180	0.2695482	0.9999869
+Brassinosteroid biosynthesis	4	39	0.2855205	0.9999869
+Arachidonic acid metabolism	7	78	0.2977683	0.9999869
+Acridone alkaloid biosynthesis	1	5	0.3023902	0.9999869
+Indole alkaloid biosynthesis	8	92	0.3080219	0.9999869
+Fatty acid metabolism	8	92	0.3080219	0.9999869
+Porphyrin and chlorophyll metabolism	6	67	0.3213878	0.9999869
+Fatty acid degradation	6	67	0.3213878	0.9999869
+Glucosinolate biosynthesis	4	42	0.3336337	0.9999869
+Fatty acid biosynthesis	5	55	0.3348901	0.9999869
+Glycosphingolipid biosynthesis - lacto and neolacto series	1	6	0.3508719	0.9999869
+beta-Alanine metabolism	7	83	0.3547655	0.9999869
+Photosynthesis - antenna proteins	2	19	0.3843436	0.9999869
+"Tropane, piperidine and pyridine alkaloid biosynthesis"	9	113	0.3857906	0.9999869
+Tryptophan metabolism	11	146	0.4356228	0.9999869
+Synthesis and degradation of ketone bodies	1	8	0.4379677	0.9999869
+AGE-RAGE signaling pathway in diabetic complications	3	35	0.4426728	0.9999869
+ABC transporters	12	162	0.4523935	0.9999869
+Zeatin biosynthesis	5	66	0.4881958	0.9999869
+Taurine and hypotaurine metabolism	1	10	0.5133846	0.9999869
+Sphingolipid metabolism	11	157	0.5334814	0.9999869
+Other types of O-glycan biosynthesis	3	41	0.5494539	0.9999869
+Base excision repair	6	87	0.5678473	0.9999869
+Diterpenoid biosynthesis	12	176	0.5698337	0.9999869
+Starch and sucrose metabolism	54	796	0.5944583	0.9999869
+Galactose metabolism	26	386	0.5949483	0.9999869
+Other glycan degradation	11	166	0.6090069	0.9999869
+SNARE interactions in vesicular transport	3	46	0.6285641	0.9999869
+Proteasome	6	93	0.6335875	0.9999869
+Peroxisome	11	173	0.663399	0.9999869
+Arginine and proline metabolism	8	127	0.6637925	0.9999869
+C5-Branched dibasic acid metabolism	1	16	0.6841929	0.9999869
+Glutathione metabolism	9	147	0.7001716	0.9999869
+Caffeine metabolism	1	18	0.7265856	0.9999869
+Selenocompound metabolism	4	71	0.735942	0.9999869
+Aminoacyl-tRNA biosynthesis	9	153	0.7437665	0.9999869
+Arginine biosynthesis	4	72	0.7459028	0.9999869
+Nicotinate and nicotinamide metabolism	2	38	0.7516157	0.9999869
+Nitrogen metabolism	2	38	0.7516157	0.9999869
+Benzoxazinoid biosynthesis	1	20	0.7632912	0.9999869
+Glycerophospholipid metabolism	7	125	0.7735431	0.9999869
+Ribosome biogenesis in eukaryotes	12	206	0.7761512	0.9999869
+Carbon fixation in photosynthetic organisms	6	111	0.7915887	0.9999869
+Glycosphingolipid biosynthesis - globo and isoglobo series	1	23	0.8093256	0.9999869
+Homologous recombination	11	197	0.8135001	0.9999869
+Monoterpenoid biosynthesis	3	62	0.8143171	0.9999869
+"Phenylalanine, tyrosine and tryptophan biosynthesis"	6	115	0.8184493	0.9999869
+Biosynthesis of unsaturated fatty acids	2	44	0.8200392	0.9999869
+Isoquinoline alkaloid biosynthesis	6	118	0.8367413	0.9999869
+"Alanine, aspartate and glutamate metabolism"	4	84	0.8438881	0.9999869
+Monobactam biosynthesis	1	26	0.8464124	0.9999869
+DNA replication	8	154	0.8468077	0.9999869
+2-Oxocarboxylic acid metabolism	8	155	0.8516795	0.9999869
+Glycerolipid metabolism	9	175	0.8653814	0.9999869
+Glycolysis / Gluconeogenesis	12	228	0.875281	0.9999869
+Glycosaminoglycan degradation	3	72	0.8849021	0.9999869
+Nucleotide excision repair	8	163	0.8863165	0.9999869
+Pyruvate metabolism	6	128	0.8872001	0.9999869
+Mismatch repair	5	110	0.8874316	0.9999869
+Glyoxylate and dicarboxylate metabolism	5	110	0.8874316	0.9999869
+Butanoate metabolism	1	31	0.8929063	0.9999869
+Pantothenate and CoA biosynthesis	2	58	0.9184689	0.9999869
+Glycosphingolipid biosynthesis - ganglio series	2	58	0.9184689	0.9999869
+Biotin metabolism	1	35	0.9197468	0.9999869
+Metabolic pathways	320	4913	0.9206983	0.9999869
+Tyrosine metabolism	7	157	0.9256806	0.9999869
+Plant-pathogen interaction	84	1392	0.9276705	0.9999869
+Histidine metabolism	1	37	0.9305293	0.9999869
+RNA polymerase	16	317	0.9324756	0.9999869
+Protein export	2	64	0.9426831	0.9999869
+"Valine, leucine and isoleucine biosynthesis"	1	42	0.951569	0.9999869
+Autophagy - other	1	45	0.9609971	0.9999869
+Photosynthesis	3	93	0.9610553	0.9999869
+Steroid biosynthesis	1	49	0.9707782	0.9999869
+mRNA surveillance pathway	9	224	0.9765688	0.9999869
+Inositol phosphate metabolism	4	125	0.977392	0.9999869
+Endocytosis	29	584	0.9808777	0.9999869
+Propanoate metabolism	1	56	0.9823716	0.9999869
+Cysteine and methionine metabolism	11	270	0.9829614	0.9999869
+Phosphatidylinositol signaling system	4	131	0.9833912	0.9999869
+Pyrimidine metabolism	21	452	0.9837561	0.9999869
+Pentose and glucuronate interconversions	22	471	0.9844663	0.9999869
+Citrate cycle (TCA cycle)	1	68	0.992591	0.9999869
+Lysine degradation	1	69	0.9931075	0.9999869
+Sulfur metabolism	5	171	0.9934086	0.9999869
+Basal transcription factors	1	76	0.9958441	0.9999869
+Ascorbate and aldarate metabolism	8	247	0.9962619	0.9999869
+N-Glycan biosynthesis	1	78	0.9964036	0.9999869
+Fructose and mannose metabolism	2	111	0.9969163	0.9999869
+Sesquiterpenoid and triterpenoid biosynthesis	2	111	0.9969163	0.9999869
+Pentose phosphate pathway	3	139	0.9971487	0.9999869
+Amino sugar and nucleotide sugar metabolism	17	432	0.9972529	0.9999869
+Purine metabolism	22	528	0.9975122	0.9999869
+Phagosome	3	142	0.9976147	0.9999869
+Cyanoamino acid metabolism	14	381	0.9978767	0.9999869
+Biosynthesis of amino acids	17	441	0.9980393	0.9999869
+"Valine, leucine and isoleucine degradation"	1	91	0.9985953	0.9999869
+Spliceosome	22	545	0.9986253	0.9999869
+Carbon metabolism	15	440	0.9995753	0.9999869
+Oxidative phosphorylation	3	192	0.9998892	0.9999869
+RNA degradation	10	367	0.9999043	0.9999869
+RNA transport	14	486	0.9999787	0.9999869
+Ribosome	12	452	0.9999869	0.9999869
