@@ -1,0 +1,85 @@
+---
+title: "Figure2c"
+author: "Jianmu Su"
+date: "2021/10/20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+plot.ko.fpkm <- function(x){
+  pfc <- c()
+  kk <- c()
+  ti <- c()
+  n=c()
+  require(stringr)
+  require(reshape2)
+  require(ggplot2)
+  ko_fpkm <- read.table("ko_fpkm.prl.txt",sep="\t",header = T,row.names = 1,check.names = F)
+  for(i in x){
+    fpkm.tmp <- ko_fpkm[grep(i,rownames(ko_fpkm)),] #||K14506|K21604
+    fpkm.tmp$ko_id <- str_sub(row.names(fpkm.tmp),1,6)
+    tmp.for.plot <- melt(fpkm.tmp)
+    tmp.for.plot$tissue <- str_sub(tmp.for.plot$variable,-1,-1)
+    tmp.for.plot$orchard <- str_sub(tmp.for.plot$variable,1,1)
+    tmp.for.plot$Region <- ifelse(tmp.for.plot$orchard=="M"|tmp.for.plot$orchard=="W"|tmp.for.plot$orchard=="T","Core","Non-core")
+    levels(tmp.for.plot$tissue)[levels(tmp.for.plot$tissue)=="F"] <- "Peel"
+    levels(tmp.for.plot$tissue)[levels(tmp.for.plot$tissue)=="L"] <- "Leaf"
+    levels(tmp.for.plot$tissue)[levels(tmp.for.plot$tissue)=="R"] <- "Root"
+    pdf(paste0("Figure2c-",i,".pdf")  ,height = 3,width = 3.5)#_K21604
+    p <- ggplot(tmp.for.plot,aes(Region,value,fill=Region))+
+      geom_boxplot(outlier.alpha=0)+ylab("FPKM")+xlab("")+theme_classic()+
+      theme(axis.text.x=element_text(angle = 45,hjust=1,vjust=1))+
+      geom_point(position=position_jitter(width=0.2),
+                 aes(shape=Region))+
+      scale_shape_manual(values = c(1,1))+
+      facet_grid(.~tissue,scales="free")
+    print (p)
+    dev.off()
+    core.f <- grep("^[M|T|W].+F$",colnames(fpkm.tmp),perl=T)
+    non.core.f<- grep("^[D|X|L|W].+F$",colnames(fpkm.tmp),perl=T)
+    core.l <- grep("^[M|T|W].+L$",colnames(fpkm.tmp),perl=T)
+    non.core.l <- grep("^[D|X|L|W].+L$",colnames(fpkm.tmp),perl=T)
+    core.r <- grep("^[M|T|W].+R$",colnames(fpkm.tmp),perl=T)
+    non.core.r <- grep("^[D|X|L|W].+R$",colnames(fpkm.tmp),perl=T)
+    pf <- wilcox.test(as.numeric(fpkm.tmp[1,core.f]),as.numeric(fpkm.tmp[1,non.core.f]),exact = F)[3] %>% as.numeric()
+    pl <-  wilcox.test(as.numeric(fpkm.tmp[1,core.l]),as.numeric(fpkm.tmp[1,non.core.l]),exact = F)[3] %>% as.numeric()
+    pr <- wilcox.test(as.numeric(fpkm.tmp[1,core.r]),as.numeric(fpkm.tmp[1,non.core.r]),exact = F)[3] %>% as.numeric()
+    pfc <- c(pfc,pf,pl,pr)
+    k <- rep(i,3)
+    kk <- c(kk,k)
+    t <- c("F","L","R")
+    ti <- c(ti,t)
+    n=paste(n,i,sep = "_")
+  }
+  print(data.frame(pfc=pfc,kk=kk,ti=ti))
+  write.table(data.frame(pfc=pfc,kk=kk,ti=ti),file=paste0(n,".wilcox.test.result.txt"),sep="\t",quote=F,row.names = F)
+}
+
+plot.ko.fpkm(c("K02183","K07478","K18834","K20725","K13459","K13457"))
+
+
+
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
