@@ -1,0 +1,135 @@
+Pathway	diff.gene	All-gene	Pvalue
+Plant-pathogen interaction	289	1392	4.40E-07
+Flavonoid biosynthesis	52	209	0.000520332
+Selenocompound metabolism	21	71	0.002734114
+"Stilbenoid, diarylheptanoid and gingerol biosynthesis"	36	150	0.006449374
+Glycosaminoglycan degradation	20	72	0.007380044
+Indole alkaloid biosynthesis	24	92	0.00830639
+Diterpenoid biosynthesis	40	176	0.01108225
+Sphingolipid metabolism	36	157	0.01339146
+Isoflavonoid biosynthesis	19	72	0.0155538
+Glycosphingolipid biosynthesis - ganglio series	16	58	0.01661905
+ABC transporters	36	162	0.02137097
+Flavone and flavonol biosynthesis	9	29	0.03162607
+Anthocyanin biosynthesis	7	21	0.03836682
+MAPK signaling pathway - plant	142	777	0.03911249
+"Cutin, suberine and wax biosynthesis"	17	69	0.03993991
+Plant hormone signal transduction	110	591	0.04117164
+Glycosphingolipid biosynthesis - globo and isoglobo series	7	23	0.06082035
+Brassinosteroid biosynthesis	10	39	0.08024969
+Benzoxazinoid biosynthesis	6	20	0.08513344
+AGE-RAGE signaling pathway in diabetic complications	9	35	0.09280481
+Phenylpropanoid biosynthesis	142	805	0.09555723
+Galactose metabolism	71	386	0.1030547
+Mannose type O-glycan biosynthesis	2	4	0.1216512
+Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	12	53	0.1265332
+Nitrogen metabolism	9	38	0.1391495
+Cholesterol metabolism	5	18	0.14573
+Circadian rhythm - plant	26	133	0.1516214
+Tryptophan metabolism	28	146	0.1660138
+Glutathione metabolism	28	147	0.1755478
+Monoterpenoid biosynthesis	13	62	0.1780377
+Ether lipid metabolism	13	65	0.2267345
+alpha-Linolenic acid metabolism	16	83	0.240047
+Glycosphingolipid biosynthesis - lacto and neolacto series	2	6	0.2452117
+Linoleic acid metabolism	14	73	0.2657544
+Fatty acid elongation	9	46	0.3048806
+Proteasome	17	93	0.3062275
+Biosynthesis of secondary metabolites	461	2839	0.3154994
+DNA replication	27	154	0.3229571
+beta-Alanine metabolism	15	83	0.3386547
+Glycerolipid metabolism	30	175	0.3587077
+Carotenoid biosynthesis	17	97	0.3731348
+Steroid biosynthesis	9	49	0.3764724
+Starch and sucrose metabolism	130	796	0.3871789
+Fructose and mannose metabolism	19	111	0.403461
+Arginine and proline metabolism	21	127	0.4614181
+Terpenoid backbone biosynthesis	20	122	0.4807183
+Other glycan degradation	27	166	0.4837807
+Porphyrin and chlorophyll metabolism	11	67	0.5066186
+Betalain biosynthesis	4	24	0.5452386
+Photosynthesis - antenna proteins	3	19	0.6021185
+Carbon fixation in photosynthetic organisms	17	111	0.6089041
+Zeatin biosynthesis	10	66	0.6193044
+Base excision repair	13	87	0.6431174
+Mismatch repair	16	110	0.6924396
+Riboflavin metabolism	4	29	0.6997861
+Phosphonate and phosphinate metabolism	1	7	0.7029067
+Arachidonic acid metabolism	11	78	0.7157156
+Pentose phosphate pathway	20	139	0.7236116
+Thiamine metabolism	4	30	0.7256603
+Sulfur relay system	2	16	0.7486125
+Synthesis and degradation of ketone bodies	1	8	0.7502095
+Glycolysis / Gluconeogenesis	33	228	0.7514572
+Pentose and glucuronate interconversions	70	471	0.7546987
+Fatty acid degradation	9	67	0.7596517
+Folate biosynthesis	6	48	0.7974541
+Other types of O-glycan biosynthesis	5	41	0.8033837
+Monobactam biosynthesis	3	26	0.8064519
+Glucosinolate biosynthesis	5	42	0.8203329
+Lysine biosynthesis	3	27	0.826896
+"Glycine, serine and threonine metabolism"	16	122	0.8344569
+Pantothenate and CoA biosynthesis	7	58	0.8370144
+Phosphatidylinositol signaling system	17	131	0.8522239
+Protein processing in endoplasmic reticulum	95	655	0.8554906
+Phenylalanine metabolism	21	160	0.8605195
+Histidine metabolism	4	37	0.861708
+Non-homologous end-joining	1	12	0.8751846
+Homologous recombination	26	197	0.8757811
+SNARE interactions in vesicular transport	5	46	0.8766442
+Phagosome	18	142	0.882261
+Ribosome biogenesis in eukaryotes	27	206	0.8877991
+Butanoate metabolism	3	31	0.8911202
+Inositol phosphate metabolism	15	125	0.9112448
+Sesquiterpenoid and triterpenoid biosynthesis	13	111	0.9151993
+"Valine, leucine and isoleucine biosynthesis"	4	42	0.9192063
+"Tropane, piperidine and pyridine alkaloid biosynthesis"	13	113	0.9265103
+C5-Branched dibasic acid metabolism	1	16	0.9376413
+Aminoacyl-tRNA biosynthesis	18	153	0.9404964
+RNA polymerase	41	317	0.9414149
+Glycerophospholipid metabolism	14	125	0.9471493
+Cysteine and methionine metabolism	34	270	0.9472517
+Glyoxylate and dicarboxylate metabolism	12	110	0.9477893
+Fatty acid biosynthesis	5	55	0.9510206
+Caffeine metabolism	1	18	0.9559255
+Ubiquinone and other terpenoid-quinone biosynthesis	21	180	0.9569354
+Pyruvate metabolism	14	128	0.9577682
+Pyrimidine metabolism	59	452	0.9624562
+"Valine, leucine and isoleucine degradation"	9	91	0.9641082
+Photosynthesis	9	93	0.970114
+Isoquinoline alkaloid biosynthesis	12	118	0.9727534
+Tyrosine metabolism	17	157	0.9733633
+Ascorbate and aldarate metabolism	29	247	0.9744656
+Biotin metabolism	2	35	0.9824003
+Nucleotide excision repair	17	163	0.983118
+Propanoate metabolism	4	56	0.9846117
+Peroxisome	18	173	0.9858115
+Basal transcription factors	6	76	0.9873516
+Cyanoamino acid metabolism	45	381	0.9907882
+Arginine biosynthesis	5	72	0.9931208
+Fatty acid metabolism	7	92	0.9942358
+mRNA surveillance pathway	23	224	0.9944095
+Purine metabolism	64	528	0.9946316
+"Alanine, aspartate and glutamate metabolism"	6	84	0.9949626
+Biosynthesis of unsaturated fatty acids	2	44	0.9954887
+Carbon metabolism	51	440	0.9961688
+"Phenylalanine, tyrosine and tryptophan biosynthesis"	9	115	0.9966966
+N-Glycan biosynthesis	5	78	0.9967295
+Oxidative phosphorylation	18	192	0.9970149
+Lysine degradation	4	69	0.9971387
+Endocytosis	70	584	0.997273
+One carbon pool by folate	3	62	0.9982901
+Nicotinate and nicotinamide metabolism	1	38	0.9986316
+Protein export	3	64	0.9987193
+Spliceosome	62	545	0.9990793
+Citrate cycle (TCA cycle)	3	68	0.9992852
+Metabolic pathways	711	4913	0.9993571
+Autophagy - other	1	45	0.9995945
+2-Oxocarboxylic acid metabolism	11	155	0.9996969
+Ubiquitin mediated proteolysis	34	357	0.9998506
+Amino sugar and nucleotide sugar metabolism	43	432	0.9998877
+Biosynthesis of amino acids	43	441	0.9999437
+Ribosome	43	452	0.9999764
+RNA degradation	32	367	0.9999842
+RNA transport	44	486	0.9999972
+Sulfur metabolism	7	171	0.9999998
