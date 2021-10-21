@@ -1,0 +1,147 @@
+DATASET_BOXPLOT
+#Box plots (box and whisker diagrams) display the distribution of data based on the five number summary: minimum, first quartile, median, third quartile, and maximum.
+#In addition to a box plot, each node can have an unlimited number of extremes defined
+
+#lines starting with a hash are comments and ignored during parsing
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+#SEPARATOR TAB
+#SEPARATOR SPACE
+SEPARATOR TAB
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	example box plot
+
+#dataset color (can be changed later)
+COLOR	#2c7fb8
+
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+#dataset scale: you can simply set the values where the scale will be drawn
+#DATASET_SCALE,2000,10000,20000
+#or you can specify value, label, color, width, style and label size factor for each scale line (dash separated, format: VALUE-LABEL-COLOR-WIDTH-DASHED-LABEL_SCALE_FACTOR))
+#DATASET_SCALE,2000-2k line-#0000ff-5-1-1,10000-line at 10k-#ff0000-1-0-2,20000-3rd line-#00ff00-5-1-1
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#Shape should be a number between 1 and 6, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_POSITION_X,100
+#LEGEND_POSITION_Y,100
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+#LEGEND_SHAPE_SCALES,1,1,0.5
+
+#maximum width
+#WIDTH,1000
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+#MARGIN,0
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL,0
+
+#show dashed lines between leaf labels and the dataset
+#DASHED_LINES,1
+
+#bar height factor; Default bar height will be slightly less than the available space between leaves, but you can set a multiplication factor here to increase/decrease it (values from 0 to 1 will decrease it, values above 1 will increase it)
+#HEIGHT_FACTOR,1
+
+#Bars are aligned to the node lines by default. Using BAR_SHIFT, you can move them all up/down by a fixed amount
+#BAR_SHIFT,0
+
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+#each node must have the five number summary defined, followed by any number of extremes (if present)
+#ID1,minimum,q1,median,q3,maximum,extreme_value1,extreme_value2
+#9606,100,150,220,280,350,10,15,20,500,540,600
+OTU_16|Jatrophihabitans_endophyticus	11	97	355	534	1525
+OTU_211|Burkholderiales_incertae_sedis	0	1	3	5	7
+OTU_2402|Gammaproteobacteria	2	11	22	111	489
+OTU_165|Gemmata_obscuriglobus	6	23	66	124	292
+OTU_17|Nocardia_nova	5	89	211	373	1264
+OTU_332|Bacillaceae	1	4	28	63	128
+OTU_33|Actinoplanes	0	2	4	22	84
+OTU_28|Rhizobium_lusitanum	0	4	10	20	165
+OTU_18|Acetobacteraceae	24	68	217	475	1292
+OTU_19|Mycobacterium_avium	25	86	118	211	1111
+OTU_5|Microbacteriaceae	9	102	478	1372	3859
+OTU_26|Pseudonocardiaceae	2	45	112	240	1525
+OTU_73|Phenylobacterium	0	1	3	11	36
+OTU_61|Nocardioidaceae	0	4	16	29	432
+OTU_329|Gammaproteobacteria	0	2	7	12	87
+OTU_71|Comamonadaceae	0	1	1	5	47
+OTU_39|Burkholderia	0	1	3	9	281
+OTU_1797|Gammaproteobacteria	1	9	14	33	195
+OTU_44|Gammaproteobacteria	51	83	285	616	1869
+OTU_35|Actinomycetales	0	0	1	7	265
+OTU_753|Aquisphaera_giovannonii	1	4	8	18	106
+OTU_108|Rhizobiales	0	2	7	32	56
+OTU_106|Acetobacteraceae	2	9	19	50	141
+OTU_1668|Actinomycetales	1	11	21	60	819
+OTU_3|Xanthomonadaceae	28	431	900	2040	4287
+OTU_11|Conexibacter_arvalis	17	90	328	751	2037
+OTU_51|Gp3	1	11	31	61	201
+OTU_66|Actinomycetales	1	67	136	270	645
+OTU_754|Actinomycetales	0	8	30	73	135
+OTU_37|Aquisphaera_giovannonii	26	48	84	148	254
+OTU_13|Gammaproteobacteria	3	47	109	423	2047
+OTU_309|Planctomycetaceae	0	4	13	27	64
+OTU_9|Bradyrhizobium	77	288	563	691	1681
+OTU_815|Mycobacterium	0	2	4	6	79
+OTU_4|Burkholderia	164	500	1014	1578	7336
+OTU_93|Solirubrobacter	1	8	15	48	231
+OTU_81|Rhizobiales	0	6	21	33	136
+OTU_70|Gp1	0	2	8	22	275
+OTU_2448|Bradyrhizobium_lupini	0	1	1	3	6
+OTU_6|Actinomycetales	27	89	153	397	2219
+OTU_21|Acidobacteria_Gp1	0	22	71	110	1014
+OTU_67|Pseudonocardia	4	17	49	69	276
+OTU_10|Burkholderia_contaminans	8	142	246	473	4554
+OTU_100|Acidobacteria_Gp1	0	1	4	15	311
+OTU_27|Xanthomonadaceae	1	70	148	188	949
+OTU_96|Stenotrophomonas_maltophilia	1	5	10	14	38
+OTU_54|Chitinophagaceae	0	3	23	64	359
+OTU_57|Solirubrobacterales	7	39	130	180	342
+OTU_283|Burkholderiales_incertae_sedis	0	1	3	8	26
+OTU_98|Gaiella_occulta	2	8	22	40	154
+OTU_45|Pseudomonas	3	12	21	26	76
+OTU_79|Methylovirgula_ligni	7	25	49	94	303
+OTU_1552|Burkholderia	0	7	18	53	376
+OTU_225|Acetobacteraceae	0	1	2	9	30
+OTU_56|Mycobacterium_celatum	9	34	66	102	355
+OTU_84|Acidimicrobiales	4	15	36	61	192
+OTU_12|Rhodanobacter	15	153	191	307	1133
+OTU_141|Acidobacteria_Gp1	0	1	4	10	173
+OTU_132|Phenylobacterium	2	6	11	21	154
+OTU_112|Rhizobiales	0	5	10	27	58
+OTU_107|Pandoraea_thiooxydans	0	6	13	58	182
+OTU_20|Gp3	0	7	33	114	1443
+OTU_150|Microbacteriaceae	1	9	18	25	134
+OTU_126|Paenibacillus_barcinonensis	0	2	4	8	216
+OTU_95|Subdivision3_genera_incertae_sedis	0	1	4	11	70
+OTU_47|Acidobacteria_Gp1	1	5	36	89	377
