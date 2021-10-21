@@ -1,0 +1,70 @@
+---
+title: "Figure3a"
+author: "Jianmu Su"
+date: "2021/10/20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reshape2)
+library(ggplot2)
+
+soil <- read.table("soil.txt",header = T)
+soil.rs <- soil[soil$Soiltype=="RS",]
+soil.rs$orchard<-str_sub(soil.rs$Sample,1,1)
+soil.rs <- soil.rs[,5:17]
+m.soil.rs <- melt(soil.rs)
+m.soil.rs$orchard <- factor(m.soil.rs$orchard,levels = c("D","X","L","S","M","T","W"))
+m.soil.rs$Region <- ifelse(m.soil.rs$orchard=="D"|m.soil.rs$orchard=="X"|m.soil.rs$orchard=="L"|m.soil.rs$orchard=="S","Non-core","Core")
+pdf("Figure3a.soil.boxplot.pdf",width =5,height = 5)
+Figure3a <- ggplot(m.soil.rs,aes(Region,value,fill=Region))+
+                geom_boxplot(outlier.alpha=0)+theme_classic()+
+                facet_wrap(variable~.,scales = "free_y",nrow=3)+
+                scale_fill_discrete(limits=c("Non-core","Core"))+
+                theme(axis.text.x=element_text(angle = 45,hjust=1,vjust=1))+
+                geom_point(position=position_jitter(width = 0.2),aes(shape=Region))+
+                scale_shape_manual(values = c(1,1))
+print (Figure3a)
+dev.off()
+
+core <- grep("^[M|T|W]",soil.rs$orchard,perl=T)
+non_core<- grep("^[D|X|L|S]",soil.rs$orchard,perl=T)
+
+pfc <- c()
+ti <- c()
+for(i in colnames(soil.rs)[1:12]){
+  pf <- mean(as.numeric(soil.rs[core,i]))/mean(as.numeric(soil.rs[non_core,i]))
+  pfc <- c(pfc,pf)
+  ti <- c(ti,i)
+}
+
+write.table(data.frame(pfc,ti),"wilcox.test.result.soil.rs.txt",sep="\t",quote=FALSE,row.names = F)
+write.table(data.frame(pfc,ti),"foldchange.of.soil.rs.txt",sep="\t",quote=FALSE,row.names = F)
+
+
+
+
+
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
