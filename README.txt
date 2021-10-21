@@ -5,4 +5,4 @@ Corresponding Author: Hong Wu (wh@scau.edu.cn)
 
 This directory include the scripts and data to generate the main figures in the manuscript. Every folder contain some files and a README.txt.
 
-The Rscript is based on R (versions 3.6.3,https://cran.r-project.org/bin/windows/base/old/3.6.3).
+The Rscripts are based on R (versions 3.6.3,https://cran.r-project.org/bin/windows/base/old/3.6.3).
