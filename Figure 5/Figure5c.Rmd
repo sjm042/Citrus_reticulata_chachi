@@ -1,0 +1,62 @@
+---
+title: "FIgure 5c"
+author: "Jianmu Su"
+date: "2022/11/10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+site="https://mirrors.tuna.tsinghua.edu.cn/CRAN"
+package_list = c("reshape2","ggplot2","devtools","agricolae",
+				"RColorBrewer","dplyr","stringr")
+for(p in package_list){
+	if(!suppressWarnings(suppressMessages(require(p, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)))){
+		install.packages(p, repos=site)
+		suppressWarnings(suppressMessages(library(p, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)))
+  }
+}
+
+
+### read data ####
+oils <- read.table("oils_for_leaf.txt",header = T,sep="\t")
+oils$group <- str_sub(oils$sample,-4,-2)
+
+#### loop for stats and plot ####
+for(i in colnames(oils)[2:11]){
+tmp <- oils[,c("group",i)]
+mean <- aggregate(tmp[,i], by=list(tmp$group), FUN=mean)
+sd <- aggregate(tmp[,i], by=list(tmp$group), FUN=sd)
+len <- aggregate(tmp[,i], by=list(tmp$group), FUN=length)
+df_res <- data.frame(mean, sd=sd$x, len=len$x)
+colnames(df_res) = c("Group", "peak_area", "Sd", "Count")
+df_res$Se <- df_res$Sd/sqrt(df_res$Count)
+tmp_model <- tmp
+colnames(tmp_model) <- c("group","oils2")
+model <- aov(oils2~group,data=tmp_model)
+out <- LSD.test(model,"group",p.adj = "none")
+txt.name=paste0(i,"_LSD.txt")
+sink(txt.name)
+print(out$groups)
+sink()
+a <- out$groups
+a$Group <- rownames(a)
+
+df_res2 <- dplyr::inner_join(df_res,a,by="Group")
+df_res2$Group <- factor(df_res2$Group,levels = c("SCK","SA","SB","SC","SD","SE","SF","SG","SH" ))
+pdfname=paste0(i,"_barplot.pdf")
+pdf(pdfname,width = 3.5,height = 3)
+#### plot ###
+p <- ggplot(df_res2, aes_string(x="Group", y="peak_area")) +
+  geom_bar(stat="identity", position=position_dodge(),color="black", width=.6) +
+  geom_errorbar(aes(ymin=peak_area-Sd, ymax=peak_area +Sd),
+                position=position_dodge(.6), width=.2)+
+  theme_classic()+
+  ggtitle(i)+
+  geom_text(aes(label=groups,y=max(peak_area)*1.3))
+print(p)  
+dev.off()
+
+}
+#### end ####
+```

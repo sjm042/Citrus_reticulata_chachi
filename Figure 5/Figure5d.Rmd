@@ -1,0 +1,52 @@
+---
+title: "Figure 5d"
+author: "Jianmu Su"
+date: "2022/11/10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+site="https://mirrors.tuna.tsinghua.edu.cn/CRAN"
+package_list = c("reshape2","ggplot2","devtools","agricolae",
+				"RColorBrewer","dplyr","stringr")
+for(p in package_list){
+	if(!suppressWarnings(suppressMessages(require(p, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)))){
+		install.packages(p, repos=site)
+		suppressWarnings(suppressMessages(library(p, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)))
+  }
+}
+
+#### read data ####
+qpcr2 <- read.table("qpcr_result.txt",header = T,sep='\t')
+qpcr2$group <- str_sub(qpcr2$Sample,-4,-2)
+
+  
+mean <- aggregate(qpcr2$relative_exp, by=list(qpcr2$group), FUN=mean)
+sd <- aggregate(qpcr2$relative_exp, by=list(qpcr2$group), FUN=sd)
+len <- aggregate(qpcr2$relative_exp, by=list(qpcr2$group), FUN=length)
+df_res <- data.frame(mean, sd=sd$x, len=len$x)
+colnames(df_res) = c("Group", "relative_expression", "Sd", "Count")
+df_res$Se <- df_res$Sd/sqrt(df_res$Count)
+tmp_model <- qpcr2[,c(2,3)]
+model <- aov(relative_exp~group,data=tmp_model)
+out <- LSD.test(model,"group",p.adj = "none")
+print(out$groups)
+a <- out$groups
+a$Group <- rownames(a)
+  
+df_res2 <- dplyr::inner_join(df_res,a,by="Group")
+df_res2$Group <- factor(df_res2$Group,levels = c("ACK","SA","SB","SC","SD","SE","SF","SG","SH" ))
+
+pdf("dxs.relative.expression.qpcr.pdf",width = 3.5,height = 3)
+p <- ggplot(df_res2, aes_string(x="Group", y="relative_expression")) +
+    geom_bar(stat="identity", position=position_dodge(),color="black", width=.6) +
+    geom_errorbar(aes(ymin=relative_expression-Sd, 
+                      ymax=relative_expression +Sd),
+                  position=position_dodge(.6), width=.2)+
+    theme_classic()+
+    geom_text(aes(label=groups,y=max(relative_expression)*1.3))
+  print(p)  
+  dev.off()
+
+```

@@ -1,0 +1,55 @@
+---
+title: "Figure5a"
+author: "Jianmu Su"
+date: "2022/11/10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+site="https://mirrors.tuna.tsinghua.edu.cn/CRAN"
+package_list = c("reshape2","ggplot2","devtools","RColorBrewer","dplyr","stringr","ggsci")
+for(p in package_list){
+	if(!suppressWarnings(suppressMessages(require(p, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)))){
+		install.packages(p, repos=site)
+		suppressWarnings(suppressMessages(library(p, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)))
+  }
+}
+## color####
+colpalettes<-unique(c(pal_npg("nrc")(10),pal_aaas("default")(10),pal_nejm("default")(8),pal_lancet("lanonc")(9),pal_jama("default")(7),pal_jco("default")(10),pal_ucscgb("default")(26),pal_d3("category10")(10),pal_locuszoom("default")(7),pal_igv("default")(51),pal_uchicago("default")(9),pal_startrek("uniform")(7),pal_tron("legacy")(7),pal_futurama("planetexpress")(12),pal_rickandmorty("schwifty")(12),pal_simpsons("springfield")(16),pal_gsea("default")(12)))
+##read data####
+abd.bac <- read.table("bacterial.genus.abdunce.txt",header = T,sep="\t",row.names = 1)
+meta.four <- abd.bac[rownames(abd.bac)%in% c("Stenotrophomonas","Streptomyces","Pseudomonas","Serratia"),]
+
+meta.four$genus <- rownames(meta.four)
+meta.bac <- melt(meta.four)
+colnames(meta.bac) <- c("genus","sample","abundance")
+meta.bac$soiltype <- str_sub(meta.bac$sample,-2,-1)
+meta.bac$orchard <- str_sub(meta.bac$sample,1,1)
+meta.bac$region <- ifelse(meta.bac$orchard=="D"|meta.bac$orchard=="X"|meta.bac$orchard=="L"|meta.bac$orchard=="S","Non-core","Core")
+meta.bac$region <- factor(meta.bac$region,levels = c("Non-core","Core"))
+meta.four$genus <- factor(meta.four$genus,levels = c("Pseudomonas","Streptomyces","Stenotrophomonas","Serratia"))
+meta.bac$orchard <- factor(meta.bac$orchard,levels = c('D','X','L','S','M','T','W'))
+#### plot ####
+pdf("meta.four.bac.abundance.pdf",width =7,height = 3.5)
+ggplot(meta.bac,aes(region,abundance))+
+  geom_boxplot(outlier.shape = 21,outlier.fill = "white",outlier.alpha =0)+
+  geom_jitter(aes(fill=orchard),width = 0.2,shape=21,size=1)+
+  scale_fill_manual(values=colpalettes[50:100])+
+  facet_wrap(~genus,scales = "free",nrow = 1)+  #soiltype~genus
+  theme_classic()+
+  theme(axis.text.x = element_text(angle = 45,hjust = 1,vjust = 1))
+dev.off()
+#### wilcox.test ####
+sink("wilcox.test.txt")
+  for(i in  unique(meta.bac$genus)){
+   core <- meta.bac$abundance[meta.bac$region=="Core"&meta.bac$genus==i]
+    non.core <- meta.bac$abundance[meta.bac$region=="Non-core"&meta.bac$genus==i]
+    tmp <- wilcox.test(core,non.core,exact = F) ## wilcox.test()
+    print(paste(i,":",tmp$p.value) )
+  }
+sink()
+#### end ####
+
+```
+
