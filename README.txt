@@ -1,6 +1,9 @@
 Scripts for statistics and plotting figures in our manuscript entitled "Soil conditions and the plant microbiome boost the accumulation of monoterpenes in the fruit of Citrus reticulata ‘Chachi’".
+
 ############ Cite this code #######
+
 Su, J., Wang, Y., Bai, M. et al. Soil conditions and the plant microbiome boost the accumulation of monoterpenes in the fruit of Citrus reticulata ‘Chachi’. Microbiome 11, 61 (2023). https://doi.org/10.1186/s40168-023-01504-2
+
 ########### Online 2023.3.28 #########
 
 Author: Jianmu Su (sjm042@163.com); Yayu Wang (wangyayu@genomics.cn); Mei Bai (baimei924@scau.edu.cn)
