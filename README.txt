@@ -6,8 +6,8 @@ Su, J., Wang, Y., Bai, M. et al. Soil conditions and the plant microbiome boost 
 
 ########### Online 2023.3.28 #########
 
-Author: Jianmu Su (sjm042@163.com); Yayu Wang (wangyayu@genomics.cn); Mei Bai (baimei924@scau.edu.cn)
-Corresponding Author: Huan Liu, liuhuan@genomics.cn; Hong Wu, wh@scau.edu.cn;
+Authors: Jianmu Su (sjm042@163.com); Yayu Wang (wangyayu@genomics.cn); Mei Bai (baimei924@scau.edu.cn)
+Corresponding Authors: Huan Liu, liuhuan@genomics.cn; Hong Wu, wh@scau.edu.cn;
 
 This directory include the scripts and data to generate the main figures in the manuscript. Every folder contain some files and a README.txt.
 
